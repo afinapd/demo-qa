@@ -3,7 +3,8 @@ from selenium.webdriver.common.by import By
 
 class LocatorsElements():
     MENU_ELEMENTS = (By.CSS_SELECTOR, ".card:nth-child(1) path")
-    SIDEBAR_TEXTBOX = (By.CSS_SELECTOR, ".show #item-0 > .text")
+    SIDEBAR_TEXTBOX = (By.ID, "item-0")
+    SIDEBAR_CHECKBOX = (By.ID, "item-1")
 
     FIELD_USERNAME = (By.ID, "userName")
     FIELD_USEREMAIL = (By.ID, "userEmail")
@@ -14,3 +15,13 @@ class LocatorsElements():
     ASSERT_NAME = (By.ID, "name")
     ASSERT_CURRENT_ADDRESS = (By.CSS_SELECTOR, ".border > #currentAddress")
     ASSERT_PERMANENT_ADDRESS = (By.CSS_SELECTOR, ".border > #permanentAddress")
+
+    EXPAND_HOME = (By.CSS_SELECTOR, ".rct-icon-expand-close")
+    EXPAND_DESKTOP = (By.CSS_SELECTOR, ".rct-node-collapsed:nth-child(1) .rct-collapse > .rct-icon")
+    EXPAND_DOCUMENTS = (By.CSS_SELECTOR, ".rct-node-collapsed:nth-child(2) .rct-collapse > .rct-icon")
+    EXPAND_DOWNLOADS = (By.CSS_SELECTOR, ".rct-node-collapsed:nth-child(3) .rct-collapse > .rct-icon")
+    CHECKLIST_DESKTOP = (By.CSS_SELECTOR, ".rct-node .rct-node-expanded:nth-child(1) > .rct-text .rct-title")
+    CHECKLIST_DOCUMENTS = (By.CSS_SELECTOR, ".rct-node .rct-node-expanded:nth-child(2) > .rct-text .rct-title")
+    CHECKLIST_DOWNLOADS = (By.CSS_SELECTOR, ".rct-node .rct-node-expanded:nth-child(3) > .rct-text .rct-title")
+    ASSERT_RESULT = (By.ID, "result")
+
