@@ -1,11 +1,6 @@
-import time
-import unittest
-
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 from locators.locators_elements import LocatorsElements
-from page_objects.elements.check_box import CheckBoxPage
+from page_objects.elements.check_box_page import CheckBoxPage
+from page_objects.elements.radio_button_page import RadioButtonPage
 from page_objects.elements.text_box_page import TextBoxPage
 from test_base import EnvironmentSetup
 
@@ -24,4 +19,10 @@ class TestsElements(EnvironmentSetup):
         self.CheckBoxPage.checklist_box(LocatorsElements.CHECKLIST_DOWNLOADS,
                                         "You have selected :\ndownloads\nwordFile\nexcelFile")
 
+    def test_radio_button(self):
+        self.RadioButtonPage = RadioButtonPage(self.driver)
+        self.RadioButtonPage.sidebar_radio_button()
+        self.RadioButtonPage.select_radio_button(LocatorsElements.RADIO_BUTTON_YES, "You have selected Yes")
+        self.RadioButtonPage.select_radio_button(LocatorsElements.RADIO_BUTTON_IMPRESSIVE, "You have selected Impressive")
+        self.RadioButtonPage.select_radio_button(LocatorsElements.RADIO_BUTTON_NO, "You have selected No")
 
