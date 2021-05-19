@@ -28,7 +28,7 @@ class CheckBoxPage(BasePage):
         time.sleep(3)
 
         # assert the result
-        self.assert_element_text(LocatorsElements.ASSERT_RESULT, text)
+        self.assert_element_text(LocatorsElements.ASSERT_CHECKLIS, text)
 
         # unchecklist box
         self.click(folder)
