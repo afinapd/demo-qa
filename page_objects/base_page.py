@@ -1,3 +1,4 @@
+from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
@@ -17,6 +18,10 @@ class BasePage(object):
 
     # this function performs text entry of the passed in text, in a web element whose locator is passed to it.
     def enter_text(self, by_locator, text):
+        return WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(by_locator)).send_keys(text)
+
+    def edit_text(self, by_locator, text):
+        self.driver.find_element(*by_locator).send_keys(Keys.CONTROL + "a")
         return WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(by_locator)).send_keys(text)
 
     # this function checks if the web element whose locator has been passed to it, is enabled or not and returns

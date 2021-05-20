@@ -6,6 +6,7 @@ class LocatorsElements():
     SIDEBAR_TEXTBOX = (By.ID, "item-0")
     SIDEBAR_CHECKBOX = (By.ID, "item-1")
     SIDEBAR_RADIOBUTTON = (By.ID, "item-2")
+    SIDEBAR_WEBTABLES = (By.ID, "item-3")
 
     FIELD_USERNAME = (By.ID, "userName")
     FIELD_USEREMAIL = (By.ID, "userEmail")
@@ -30,3 +31,12 @@ class LocatorsElements():
     RADIO_BUTTON_IMPRESSIVE = (By.CSS_SELECTOR, ".custom-control:nth-child(3) > .custom-control-label")
     RADIO_BUTTON_NO = (By.CSS_SELECTOR, ".disabled:nth-child(2)")
     ASSERT_SELECTED = (By.CSS_SELECTOR, ".mt-3")
+
+    BUTTON_ADD = (By.ID, "addNewRecordButton")
+    FIELD_FIRST_NAME = (By.ID, "firstName")
+    FIELD_LAST_NAME = (By.ID, "lastName")
+    FIELD_AGE = (By.ID, "age")
+    FIELD_SALARY = (By.ID, "salary")
+    FIELD_DEPARTMENT = (By.ID, "department")
+    FIELD_SEARCH = (By.ID, "searchBox")
+
