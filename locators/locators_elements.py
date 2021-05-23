@@ -7,6 +7,8 @@ class LocatorsElements():
     SIDEBAR_CHECKBOX = (By.ID, "item-1")
     SIDEBAR_RADIOBUTTON = (By.ID, "item-2")
     SIDEBAR_WEBTABLES = (By.ID, "item-3")
+    SIDEBAR_BUTTONS = (By.ID, "item-4")
+    SIDEBAR_LINKS = (By.ID, "item-5")
 
     FIELD_USERNAME = (By.ID, "userName")
     FIELD_USEREMAIL = (By.ID, "userEmail")
@@ -39,4 +41,22 @@ class LocatorsElements():
     FIELD_SALARY = (By.ID, "salary")
     FIELD_DEPARTMENT = (By.ID, "department")
     FIELD_SEARCH = (By.ID, "searchBox")
+
+    BUTTON_DOUBLE_CLICK = (By.ID, "doubleClickBtn")
+    BUTTON_RIGHT_CLICK = (By.ID, "rightClickBtn")
+    BUTTON_CLICK = (By.XPATH, "//div[3]/button")
+    ASSERT_DOUBLE_CLICK = (By.ID, "doubleClickMessage")
+    ASSERT_RIGHT_CLICK = (By.ID, "rightClickMessage")
+    ASSERT_CLICK = (By.ID, "dynamicClickMessage")
+
+    LINK_SIMPLE = (By.ID, "simpleLink")
+    LINK_DYNAMIC = (By.ID, "dynamicLink")
+    ASSERT_RESPONSE = (By.ID, "linkResponse")
+    LINK_CREATED = (By.ID, "created")
+    LINK_NO_CONTENT = (By.ID, "no-content")
+    LINK_MOVED = (By.ID, "moved")
+    LINK_BAD_REQUEST = (By.ID, "bad-request")
+    LINK_UNAUTH = (By.ID, "unauthorized")
+    LINK_FORBIDDEN = (By.ID, "forbidden")
+    LINK_INVALID_URL = (By.ID, "invalid-url")
 

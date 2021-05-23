@@ -18,6 +18,7 @@ class EnvironmentSetup(unittest.TestCase):
         # self.addCleanup(self.screen_shot)
 
         self.wait = WebDriverWait(self.driver, timeout=30)
+        self.vars = {}
 
     @classmethod
     def tearDown(self):

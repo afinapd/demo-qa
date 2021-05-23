@@ -1,7 +1,13 @@
+import time
+
+from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 
 from locators.locators_elements import LocatorsElements
+from page_objects.elements.buttons_page import ButtonsPage
 from page_objects.elements.check_box_page import CheckBoxPage
+from page_objects.elements.links_page import LinksPage
 from page_objects.elements.radio_button_page import RadioButtonPage
 from page_objects.elements.text_box_page import TextBoxPage
 from page_objects.elements.web_tables import WebTablesPage
@@ -63,3 +69,29 @@ class TestsElements(EnvironmentSetup):
         self.WebTablesPage.assert_not_data_table("2", "Alden", "Cantrell", "45", "aldentest@example.com", "12000",
                                              "Compliance")
         self.WebTablesPage.assert_not_data_table("3", "Kierra", "Gentry", "29", "kierra@example.com", "20000", "Legal")
+
+    def test_buttons(self):
+        self.ButtonsPage = ButtonsPage(self.driver)
+        self.ButtonsPage.buttons("You have done a double click", "You have done a right click", "You have done a dynamic click")
+
+    def test_links(self):
+        self.LinksPage = LinksPage(self.driver)
+        self.LinksPage.sidebar_links()
+        # click link "Home" will open new tab
+        self.LinksPage.link_new_tab(LocatorsElements.LINK_SIMPLE, "ToolsQA")
+        # click link "HomeXga6d" will open new tab
+        self.LinksPage.link_new_tab(LocatorsElements.LINK_DYNAMIC, "ToolsQA")
+        # link Created
+        self.LinksPage.link_api_call(LocatorsElements.LINK_CREATED, "201", "Created")
+        # link No Content
+        self.LinksPage.link_api_call(LocatorsElements.LINK_NO_CONTENT, "204", "No Content")
+        # link Moved
+        self.LinksPage.link_api_call(LocatorsElements.LINK_MOVED, "301", "Moved Permanently")
+        # link Bad Request
+        self.LinksPage.link_api_call(LocatorsElements.LINK_BAD_REQUEST, "400", "Bad Request")
+        # link Unauthorized
+        self.LinksPage.link_api_call(LocatorsElements.LINK_UNAUTH, "401", "Unauthorized")
+        # link Forbidden
+        self.LinksPage.link_api_call(LocatorsElements.LINK_FORBIDDEN, "403", "Forbidden")
+        # link Not Found
+        self.LinksPage.link_api_call(LocatorsElements.LINK_INVALID_URL, "404", "Not Found")
