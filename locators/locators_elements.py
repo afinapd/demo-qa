@@ -9,6 +9,7 @@ class LocatorsElements():
     SIDEBAR_WEBTABLES = (By.ID, "item-3")
     SIDEBAR_BUTTONS = (By.ID, "item-4")
     SIDEBAR_LINKS = (By.ID, "item-5")
+    SIDEBAR_BROKEN_LINKS_IMAGES = (By.ID, "item-6")
 
     FIELD_USERNAME = (By.ID, "userName")
     FIELD_USEREMAIL = (By.ID, "userEmail")
@@ -59,4 +60,7 @@ class LocatorsElements():
     LINK_UNAUTH = (By.ID, "unauthorized")
     LINK_FORBIDDEN = (By.ID, "forbidden")
     LINK_INVALID_URL = (By.ID, "invalid-url")
+
+    IMAGES = (By.TAG_NAME, "img")
+    LINKS = (By.CSS_SELECTOR, "a")
 

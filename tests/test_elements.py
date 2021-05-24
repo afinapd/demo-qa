@@ -2,9 +2,11 @@ import time
 
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
+from requests.exceptions import MissingSchema, InvalidSchema, InvalidURL
+import requests
 
 from locators.locators_elements import LocatorsElements
+from page_objects.elements.broken_links_images_page import BrokenLinksImagesPage
 from page_objects.elements.buttons_page import ButtonsPage
 from page_objects.elements.check_box_page import CheckBoxPage
 from page_objects.elements.links_page import LinksPage
@@ -95,3 +97,10 @@ class TestsElements(EnvironmentSetup):
         self.LinksPage.link_api_call(LocatorsElements.LINK_FORBIDDEN, "403", "Forbidden")
         # link Not Found
         self.LinksPage.link_api_call(LocatorsElements.LINK_INVALID_URL, "404", "Not Found")
+
+    def test_broken(self):
+        self.BrokenLinksImagesPage = BrokenLinksImagesPage(self.driver)
+        self.BrokenLinksImagesPage.sidebar_broken_links_image()
+        self.BrokenLinksImagesPage.find_broken_links_images(LocatorsElements.IMAGES, 'src')
+        self.BrokenLinksImagesPage.find_broken_links_images(LocatorsElements.LINKS, 'href')
+
