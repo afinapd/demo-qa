@@ -16,10 +16,12 @@ class BrokenLinksImagesPage(BasePage):
         self.click(LocatorsElements.SIDEBAR_BROKEN_LINKS_IMAGES)
 
     def find_broken_links_images(self, by_locator, attribute):
+        # find elements links or images
         elems = self.driver.find_elements(*by_locator)
         count = 0
 
         for elem in elems:
+            # try to get images/links with status code 200
             try:
                 response = requests.get(elem.get_attribute(attribute), stream=True)
                 print(elem.get_attribute(attribute), response.status_code)
