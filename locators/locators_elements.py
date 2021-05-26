@@ -10,6 +10,8 @@ class LocatorsElements():
     SIDEBAR_BUTTONS = (By.ID, "item-4")
     SIDEBAR_LINKS = (By.ID, "item-5")
     SIDEBAR_BROKEN_LINKS_IMAGES = (By.ID, "item-6")
+    SIDEBAR_UPLOAD_DOWNLOAD = (By.ID, "item-7")
+    SIDEBAR_DYNAMIC_PROPERTIES = (By.ID, "item-8")
 
     FIELD_USERNAME = (By.ID, "userName")
     FIELD_USEREMAIL = (By.ID, "userEmail")
@@ -63,4 +65,13 @@ class LocatorsElements():
 
     IMAGES = (By.TAG_NAME, "img")
     LINKS = (By.CSS_SELECTOR, "a")
+
+    BUTTON_DOWNLOAD = (By.ID, "downloadButton")
+    BUTTON_UPLOAD = (By.ID, "uploadFile")
+    ASSERT_UPLOADED = (By.ID, "uploadedFilePath")
+
+    ASSERT_COLOR_BEFORE = (By.CLASS_NAME, "mt-4 btn btn-primary")
+    ASSERT_COLOR_AFTER = (By.CLASS_NAME,"mt-4 text-danger btn btn-primary")
+    ASSERT_ENABLE_AFTER = (By.ID, "enableAfter")
+    ASSERT_VISIBLE_AFTER = (By.ID, "visibleAfter")
 

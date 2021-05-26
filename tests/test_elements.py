@@ -5,13 +5,16 @@ from selenium.webdriver.common.by import By
 from requests.exceptions import MissingSchema, InvalidSchema, InvalidURL
 import requests
 
+
 from locators.locators_elements import LocatorsElements
 from page_objects.elements.broken_links_images_page import BrokenLinksImagesPage
 from page_objects.elements.buttons_page import ButtonsPage
 from page_objects.elements.check_box_page import CheckBoxPage
+from page_objects.elements.dynamic_properties_page import DynamicPropertiesPage
 from page_objects.elements.links_page import LinksPage
 from page_objects.elements.radio_button_page import RadioButtonPage
 from page_objects.elements.text_box_page import TextBoxPage
+from page_objects.elements.upload_download_page import UploadDownloadPage
 from page_objects.elements.web_tables import WebTablesPage
 from test_base import EnvironmentSetup
 
@@ -101,6 +104,15 @@ class TestsElements(EnvironmentSetup):
     def test_broken(self):
         self.BrokenLinksImagesPage = BrokenLinksImagesPage(self.driver)
         self.BrokenLinksImagesPage.sidebar_broken_links_image()
+        # check broken images
         self.BrokenLinksImagesPage.find_broken_links_images(LocatorsElements.IMAGES, 'src')
+        # check broken links
         self.BrokenLinksImagesPage.find_broken_links_images(LocatorsElements.LINKS, 'href')
 
+    def test_upload_download(self):
+        self.UploadDownloadPage = UploadDownloadPage(self.driver)
+        self.UploadDownloadPage.upload_download(r"C:\Users\afinapd\PycharmProjects\Portfolio\images\sampleFile.jpeg", r"C:\fakepath\sampleFile.jpeg")
+
+    def test_dynamic_properties(self):
+        self.DynamicPropertiesPage = DynamicPropertiesPage(self.driver)
+        self.DynamicPropertiesPage.dynamic_properties()
